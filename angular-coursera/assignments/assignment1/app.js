@@ -14,6 +14,7 @@
         $scope.tooMuch = () => {
 
             if ($scope.dishes.length == 0) {
+                $scope.message = '';
                 return;
             }
             if ($scope.dishes.split(',').length < 4) {
