@@ -60,7 +60,7 @@
         };
 
         service.addItem = function(item, $index){
-            console.log($index);
+            // console.log($index);
             listAlready.push(item);
             listToBuy.splice($index, 1);
             // return listAlready;
