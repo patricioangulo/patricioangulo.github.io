@@ -25,8 +25,13 @@
       narrow.foundItems = function(){
         narrow.items = [];
         narrow.notFound = false;
-        var string = narrow.item.charAt(0).toUpperCase() + narrow.item.slice(1).toLowerCase();
-        console.log(string);
+        try {
+          var string = narrow.item.charAt(0).toUpperCase() + narrow.item.slice(1).toLowerCase();
+          console.log(string);  
+        } catch (error) {
+          
+        }
+        
         var found = MenuSearchService.getMatchedMenuItems(string);
         found.then(function(response){
           // console.log(response.data);
