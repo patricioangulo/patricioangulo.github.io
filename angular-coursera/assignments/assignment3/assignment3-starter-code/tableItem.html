@@ -1,0 +1,30 @@
+<table class="table" ng-show="narrow.items.length!==0">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in narrow.items">
+            <td>({{item.short_name}}) {{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td><button ng-click="narrow.removeItem($index)">Don't want this one!</button></td>
+        </tr>
+    </tbody>
+</table>
+<table class="table" ng-show="narrow.notFound">
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Nothing found
+            </td>
+        </tr>
+    </tbody>
+</table>
