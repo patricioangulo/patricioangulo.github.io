@@ -25,8 +25,9 @@
       narrow.foundItems = function(){
         narrow.items = [];
         narrow.notFound = false;
-        // console.log(narrow.item)
-        var found = MenuSearchService.getMatchedMenuItems(narrow.item);
+        var string = narrow.item.charAt(0).toUpperCase() + narrow.item.slice(1).toLowerCase();
+        console.log(string);
+        var found = MenuSearchService.getMatchedMenuItems(string);
         found.then(function(response){
           // console.log(response.data);
 
@@ -34,7 +35,7 @@
           // console.log(narrow.categories);
           for (const [key, value] of Object.entries(narrow.categories)) {
             // console.log(`${key}: ${value.category.name}`);
-            if(value.category.name===narrow.item){
+            if(value.category.name===string){
               // console.log(value.menu_items)
               narrow.items = value.menu_items;
             }
